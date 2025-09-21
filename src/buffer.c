@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 void buffer_loadrc(struct buffer* buffer) {
   char* home = getenv("HOME");
@@ -190,7 +191,11 @@ void buffer_call_script(struct buffer* buffer, bool supported) {
   char* home = getenv("HOME");
   char buf[512];
   snprintf( buf, sizeof(buf), "%s/%s", home, ".config/skvim/skvim.sh");
-  secure_exec(buf, &env_vars);
+  
+  // Only execute script if it exists
+  if (access(buf, F_OK) == 0) {
+    secure_exec(buf, &env_vars);
+  }
   env_vars_destroy(&env_vars);
 }
 
