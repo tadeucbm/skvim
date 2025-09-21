@@ -1,0 +1,27 @@
+# SketchyVim Allowlist Configuration
+# Only applications listed here will have vim functionality enabled
+# You can use either the application name or bundle identifier
+
+# Web Browsers
+Safari
+com.apple.Safari
+
+# Text Editors
+TextEdit
+com.apple.TextEdit
+
+# Development Tools
+Visual Studio Code
+com.microsoft.VSCode
+
+# Note Taking Apps
+Obsidian
+md.obsidian
+
+# Email Clients
+Mail
+com.apple.mail
+
+# Add your favorite applications below:
+# ApplicationName
+# com.example.bundleid
